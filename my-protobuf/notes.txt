@@ -1,0 +1,4 @@
+protoc --go_out=. ./proto/basic/*.proto // cara 1
+protoc --go_opt=module=my-protobuf --go_out=. ./proto/basic/*.proto // cara 2 ( abaikan folder root )
+	# ./proto/dummy/*.proto \
+	# ./proto/jobsearch/*.proto \
