@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+//import "google/protobuf/any.proto";
+
 option go_package = "my-protobuf/protogen/basic";
 
 enum Gender {
@@ -15,6 +17,11 @@ message User {
   bytes password = 4;
   Gender gender = 5;
   Address address = 6;
+//  google.protobuf.Any communication_channel = 7;
+  oneof communication_channel{
+    SocialMedia social_media = 7 [json_name = "social_media"];
+    InstantMessaging instant_messaging = 8 [json_name = "instant_messaging"];
+  }
 
   repeated string emails = 19;
 }
@@ -30,6 +37,18 @@ message Address{
     double latitude = 1;
     double longtitude = 2;
   }
+}
+
+message PaperMail{
+  string email = 1;
+}
+
+message SocialMedia{
+  string social_media_username = 1;
+}
+
+message InstantMessaging {
+  string phone = 1;
 }
 
 // ["json_name = ""]
