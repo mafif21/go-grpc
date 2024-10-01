@@ -11,6 +11,10 @@ func BasicUser() {
 		Street:  "Jln Kyai Mojo No: 11",
 		City:    "Jepara",
 		Country: "Indonesia",
+		Coordinate: &basic.Address_Coordinate{
+			Latitude:   87649939.0844,
+			Longtitude: 477474883.980,
+		},
 	}
 
 	u := basic.User{

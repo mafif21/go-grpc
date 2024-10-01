@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package first.application.pkg;
+
+option go_package = "my-protobuf/protogen/first";
+
+message Application{
+  string name = 2;
+  int32 age = 3;
+  repeated string skills = 4;
+}

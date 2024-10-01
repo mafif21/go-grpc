@@ -9,17 +9,17 @@ import (
 
 type logWriter struct{}
 
-func (writer *logWriter) Write(byte []byte) (int, error)  {
+func (writer *logWriter) Write(byte []byte) (int, error) {
 	return fmt.Print(time.Now().Format("15:04:05" + " " + string(byte)))
 }
 
-func main()  {
+func main() {
 	log.SetFlags(0)
 	log.SetOutput(new(logWriter))
 
 	// basic.SayHello()
 	basic.BasicUser()
+	//basic.BasicUserGroup()
 	// basic.ProtoToJsonUser()
 	// basic.JsonToProtoUser()
 }
-

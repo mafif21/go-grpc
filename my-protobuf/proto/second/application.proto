@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package second.application.pkg;
+
+option go_package = "my-protobuf/protogen/second";
+
+message Application{
+  string name = 2;
+  int32 age = 3;
+  repeated string skills = 4;
+  repeated string programming_language = 5 [json_name = "programming_language"];
+}

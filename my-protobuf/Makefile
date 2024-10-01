@@ -21,6 +21,9 @@ endif
 protoc:
 	protoc --go_opt=module=${GO_MODULE} --go_out=. \
 	./proto/basic/*.proto \
+	./proto/first/*.proto \
+	./proto/second/*.proto \
+	./proto/jobsearch/*.proto \
 
 
 .PHONY: build

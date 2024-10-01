@@ -13,16 +13,23 @@ message User {
   string username = 2;
   bool is_active = 3 [json_name = "is_active"];
   bytes password = 4;
-
-  repeated string emails = 19;
   Gender gender = 5;
   Address address = 6;
+
+  repeated string emails = 19;
 }
 
 message Address{
   string street = 1;
   string city = 2;
   string country = 3;
+
+  Coordinate coordinate = 16;
+
+  message Coordinate {
+    double latitude = 1;
+    double longtitude = 2;
+  }
 }
 
 // ["json_name = ""]
