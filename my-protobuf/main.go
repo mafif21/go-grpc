@@ -19,5 +19,7 @@ func main()  {
 
 	// basic.SayHello()
 	basic.BasicUser()
+	// basic.ProtoToJsonUser()
+	// basic.JsonToProtoUser()
 }
 
