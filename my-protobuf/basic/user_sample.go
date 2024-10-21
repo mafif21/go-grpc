@@ -39,6 +39,56 @@ func BasicUser() {
 	log.Println(string(jsonBytes))
 }
 
+func UserWithSkill() {
+	//usr := &basic.User{
+	//	Id:       1,
+	//	Username: "apiplele",
+	//	IsActive: true,
+	//	Password: []byte("password"),
+	//	Gender:   basic.Gender_GENDER_MALE,
+	//	UserSkill: map[string]*basic.Skill{
+	//		"primary_skill": {
+	//			Id:        2,
+	//			SkillName: "programming skill",
+	//		},
+	//	},
+	//	Emails: []string{"lelejepara@gmail.com", "afif21jepara@gmail.com"},
+	//}
+
+	us := map[string]uint32{
+		"football":    3,
+		"basketball":  5,
+		"programming": 4,
+	}
+
+	usr := &basic.User{
+		Id:        1,
+		Username:  "apiplele",
+		IsActive:  true,
+		Password:  []byte("password"),
+		Gender:    basic.Gender_GENDER_MALE,
+		UserSkill: us,
+		Emails:    []string{"lelejepara@gmail.com", "afif21jepara@gmail.com"},
+	}
+
+	marshal, _ := protojson.Marshal(usr)
+	log.Println(string(marshal))
+}
+
+func ProtoToByteUser() {
+	u2 := basic.User{
+		Id:       99,
+		Username: "apiipp_____",
+		IsActive: true,
+		Password: []byte("password"),
+		Gender:   basic.Gender_GENDER_MALE,
+		Emails:   []string{"lelejepara@gmail.com", "afif21jepara@gmail.com"},
+	}
+
+	jsonBytes, _ := protojson.Marshal(&u2)
+	log.Println(string(jsonBytes))
+}
+
 func ProtoToJsonUser() {
 	u2 := basic.User{
 		Id:       99,
